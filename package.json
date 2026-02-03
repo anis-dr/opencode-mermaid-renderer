@@ -1,6 +1,6 @@
 {
   "name": "opencode-mermaid-renderer",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Render mermaid diagrams as beautiful ASCII art in OpenCode",
   "keywords": [
     "opencode",
