@@ -1,0 +1,32 @@
+# Source control
+.git/
+.gitignore
+
+# Dependencies
+node_modules/
+
+# Build artifacts
+dist/
+bun.lockb
+
+# Config files
+tsconfig.json
+.prettierrc
+.eslintrc*
+
+# IDE
+.idea/
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Tests
+__tests__/
+*.test.ts
+*.spec.ts
+coverage/
+
+# Docs (README is included via files array)
+docs/
