@@ -10,6 +10,10 @@ const MERMAID_BLOCK_REGEX = /```mermaid\n([\s\S]*?)```/g
 /**
  * OpenCode plugin that renders mermaid diagrams as ASCII art
  * 
+ * Features:
+ * - Renders diagrams inline as ASCII art (shown by default)
+ * - Preserves original mermaid source in expandable <details> section
+ * 
  * Supported diagram types:
  * - Flowcharts (graph TD/LR/BT/RL)
  * - State diagrams (stateDiagram-v2)
@@ -49,14 +53,25 @@ function renderMermaidBlocks(text: string): string {
 
 /**
  * Render a single mermaid diagram to ASCII
+ * Shows rendered diagram by default with expandable source code
  * On error, returns the original code block with an error comment
  */
 function renderSingleBlock(mermaidCode: string): string {
   try {
     const ascii = renderMermaidAscii(mermaidCode)
     
-    // Wrap in a code block for proper formatting
-    return "```\n" + ascii + "\n```"
+    // Show rendered diagram with expandable source code section
+    return (
+      "```\n" +
+      ascii +
+      "\n```\n\n" +
+      "<details>\n" +
+      "<summary>View Mermaid Source</summary>\n\n" +
+      "```mermaid\n" +
+      mermaidCode +
+      "\n```\n\n" +
+      "</details>"
+    )
   } catch (error) {
     // Keep original mermaid block and add error as comment
     const errorMessage = (error as Error).message || "Unknown error"
