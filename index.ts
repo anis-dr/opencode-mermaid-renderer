@@ -31,7 +31,7 @@ export const MermaidRenderer: Plugin = async () => {
         output.text =
           output.text +
           "\n\n<!-- mermaid-renderer: unexpected error - " +
-          (error as Error).message +
+          escapeHtmlComment((error as Error).message) +
           " -->"
       }
     },
