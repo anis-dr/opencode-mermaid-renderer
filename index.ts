@@ -5,7 +5,7 @@ import { renderMermaidAscii } from "beautiful-mermaid"
  * Regex to match mermaid code blocks
  * Matches: ```mermaid\n..content..\n```
  */
-const MERMAID_BLOCK_REGEX = /```mermaid\n([\s\S]*?)```/g
+const MERMAID_BLOCK_REGEX = /```mermaid\s*\n([\s\S]*?)```/g
 
 /**
  * OpenCode plugin that renders mermaid diagrams as ASCII art
@@ -17,7 +17,7 @@ const MERMAID_BLOCK_REGEX = /```mermaid\n([\s\S]*?)```/g
  * - Class diagrams (classDiagram)
  * - ER diagrams (erDiagram)
  */
-export const MermaidRenderer: Plugin = async () => {
+const MermaidRenderer: Plugin = async () => {
   return {
     "experimental.text.complete": async (
       _input: { sessionID: string; messageID: string; partID: string },
