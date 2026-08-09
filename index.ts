@@ -53,7 +53,7 @@ function renderMermaidBlocks(text: string): string {
  */
 function renderSingleBlock(mermaidCode: string): string {
   try {
-    const ascii = renderMermaidAscii(mermaidCode)
+    const ascii = renderMermaidAscii(mermaidCode, { wideChar: true })
     
     // Wrap in a code block for proper formatting
     return "```\n" + ascii + "\n```"
