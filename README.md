@@ -64,6 +64,7 @@ The plugin automatically renders it as ASCII art:
 - **Sequence diagrams** - `sequenceDiagram`
 - **Class diagrams** - `classDiagram`
 - **ER diagrams** - `erDiagram`
+- **XY charts** - `xychart-beta`
 
 ## Error Handling
 
