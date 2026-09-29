@@ -35,7 +35,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "beautiful-mermaid": "^0.1.3"
+    "beautiful-mermaid": "^1.1.3"
   },
   "peerDependencies": {
     "@opencode-ai/plugin": ">=0.13.7"
